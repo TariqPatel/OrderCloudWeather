@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class WeatherService<T: Codable> {
+final class NetwworkService<T: Codable> {
     
-    static func fetchWeather(for url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    static func fetchData(for url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
