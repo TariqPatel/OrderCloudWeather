@@ -14,6 +14,8 @@
 		2D5241CD2B7F218C00658461 /* OrderCloudWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5241CC2B7F218C00658461 /* OrderCloudWeatherTests.swift */; };
 		2D5241D72B7F218C00658461 /* OrderCloudWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5241D62B7F218C00658461 /* OrderCloudWeatherUITests.swift */; };
 		2D5241D92B7F218C00658461 /* OrderCloudWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5241D82B7F218C00658461 /* OrderCloudWeatherUITestsLaunchTests.swift */; };
+		2D5241E92B7F21F300658461 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5241E82B7F21F300658461 /* HomeView.swift */; };
+		2D5241EB2B7F221E00658461 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5241EA2B7F221E00658461 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		2D5241D22B7F218C00658461 /* OrderCloudWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderCloudWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5241D62B7F218C00658461 /* OrderCloudWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCloudWeatherUITests.swift; sourceTree = "<group>"; };
 		2D5241D82B7F218C00658461 /* OrderCloudWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCloudWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2D5241E82B7F21F300658461 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2D5241EA2B7F221E00658461 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		2D5241BA2B7F218900658461 /* OrderCloudWeather */ = {
 			isa = PBXGroup;
 			children = (
+				2D5241E62B7F21D600658461 /* Features */,
 				2D5241BB2B7F218900658461 /* OrderCloudWeatherApp.swift */,
 				2D5241BD2B7F218900658461 /* ContentView.swift */,
 				2D5241BF2B7F218B00658461 /* Assets.xcassets */,
@@ -125,6 +130,23 @@
 				2D5241D82B7F218C00658461 /* OrderCloudWeatherUITestsLaunchTests.swift */,
 			);
 			path = OrderCloudWeatherUITests;
+			sourceTree = "<group>";
+		};
+		2D5241E62B7F21D600658461 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2D5241E72B7F21E000658461 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2D5241E72B7F21E000658461 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D5241E82B7F21F300658461 /* HomeView.swift */,
+				2D5241EA2B7F221E00658461 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5241E92B7F21F300658461 /* HomeView.swift in Sources */,
 				2D5241BE2B7F218900658461 /* ContentView.swift in Sources */,
 				2D5241BC2B7F218900658461 /* OrderCloudWeatherApp.swift in Sources */,
+				2D5241EB2B7F221E00658461 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
