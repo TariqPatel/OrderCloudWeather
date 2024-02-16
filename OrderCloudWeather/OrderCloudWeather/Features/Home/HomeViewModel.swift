@@ -26,7 +26,7 @@ final class HomeViewModel: ObservableObject {
         if let coordinates = coordinates {
             urlString = getCurrentWeatherURL(latitude: coordinates.latitude, longitude: coordinates.longitude)
         } else {
-            urlString = getCurrentWeatherURL(latitude: 53.9, longitude: 27.5667)
+            urlString = getCurrentWeatherURL(latitude: -33.918861, longitude: 18.423300)
         }
         getWeather(cityLocation: cityLocation, for: urlString)
     }
@@ -34,8 +34,7 @@ final class HomeViewModel: ObservableObject {
     func getCurrentWeatherURL(latitude: Double, longitude: Double) -> String {
         let baseURL = Constants.Strings.url
         let key = Constants.Strings.keyAPI
-        let excludeFields = "minutely"
-        return "\(baseURL)/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(key)&exclude=\(excludeFields)&units=metric"
+        return "\(baseURL)/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(key)&exclude=minutely&units=metric"
     }
     
     private func getWeather(cityLocation: String, for urlString: String) {
