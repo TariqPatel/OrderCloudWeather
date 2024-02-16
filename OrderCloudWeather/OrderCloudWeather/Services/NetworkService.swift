@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetwworkService<T: Codable> {
+final class NetworkService<T: Codable> {
     
     static func fetchData(for url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in

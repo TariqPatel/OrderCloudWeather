@@ -40,7 +40,7 @@ final class HomeViewModel: ObservableObject {
     
     private func getWeather(cityLocation: String, for urlString: String) {
         guard let url = URL(string: urlString) else {return}
-        NetwworkService<WeatherResponse>.fetchData(for: url) { (result) in
+        NetworkService<WeatherResponse>.fetchData(for: url) { (result) in
             switch result {
                 case .success(let response):
                     DispatchQueue.main.async {
