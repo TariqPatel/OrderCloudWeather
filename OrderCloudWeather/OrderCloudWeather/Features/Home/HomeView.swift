@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var weatherViewModel = WeatherViewModel()
+    
     var body: some View {
-        Text("Tariq Home")
+        Text("\(weatherViewModel.temperature)°C")
     }
 }
 
