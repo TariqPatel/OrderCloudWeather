@@ -38,7 +38,7 @@ struct HomeView: View {
             }
             Text("View the weather for week by clicking the below button")
                 .multilineTextAlignment(.center)
-            Button("View") {
+            Button("VIEW") {
                 print("Button tapped!")
             }.buttonStyle(.borderedProminent)
             Spacer()
