@@ -11,14 +11,14 @@ import CoreLocation
 
 final class HomeViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
-    @Published var city = Constants.Strings.city {
+    @Published var cityLocation = Constants.Strings.city {
         didSet {
-            createWeatherURL(LocationHelper.getLocation(city))
+            createWeatherURL(LocationHelper.getLocation(cityLocation))
         }
     }
 
     init() {
-        createWeatherURL(LocationHelper.getLocation(city))
+        createWeatherURL(LocationHelper.getLocation(cityLocation))
     }
     
     private func createWeatherURL(_ coordinates: CLLocationCoordinate2D?) {
@@ -28,7 +28,7 @@ final class HomeViewModel: ObservableObject {
         } else {
             urlString = getCurrentWeatherURL(latitude: 53.9, longitude: 27.5667)
         }
-        getWeather(city: city, for: urlString)
+        getWeather(cityLocation: cityLocation, for: urlString)
     }
     
     func getCurrentWeatherURL(latitude: Double, longitude: Double) -> String {
@@ -38,7 +38,7 @@ final class HomeViewModel: ObservableObject {
         return "\(baseURL)/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(key)&exclude=\(excludeFields)&units=metric"
     }
     
-    private func getWeather(city: String, for urlString: String) {
+    private func getWeather(cityLocation: String, for urlString: String) {
         guard let url = URL(string: urlString) else {return}
         WeatherService<WeatherResponse>.fetchWeather(for: url) { (result) in
             switch result {

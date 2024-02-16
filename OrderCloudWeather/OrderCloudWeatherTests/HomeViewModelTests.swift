@@ -23,6 +23,6 @@ final class HomeViewModelTests: XCTestCase {
     }
     
     func testIfCityCorrect() {
-        XCTAssertEqual(viewModel.city, Constants.Strings.city)
+        XCTAssertEqual(viewModel.cityLocation, Constants.Strings.city)
     }
 }
