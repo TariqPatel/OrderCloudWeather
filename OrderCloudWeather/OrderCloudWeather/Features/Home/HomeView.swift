@@ -19,16 +19,16 @@ struct HomeView: View {
                 HStack{
                     Text("Current temperature:")
                     Spacer()
-                    Text("\(Formatter.temperature(homeViewModel.weather))°C")
+                    Text("\(Formatter.temperature(homeViewModel.weather.current.temp))°C")
                 }
                 HStack{
                     Text("Weather condition:")
                     Spacer()
-                    Text(Formatter.weatherCondition(homeViewModel.weather))
+                    Text(homeViewModel.weather.current.weather.first?.main ?? "")
                 }
                 HStack{
                     Spacer()
-                    ImageHelper.getWeatherIconFor(icon: Formatter.weatherIcon(homeViewModel.weather))
+                    ImageHelper.getWeatherIconFor(icon: Formatter.weatherIcon(homeViewModel.weather.current.weather.first?.icon ?? ""))
                         .resizable()
                         .scaledToFill()
                         .frame(width: (CGFloat(3)*40),

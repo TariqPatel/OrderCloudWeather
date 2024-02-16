@@ -9,15 +9,46 @@ import Foundation
 
 struct Formatter {
     
-    public static func temperature(_ weather: WeatherResponse) -> String {
-        return String(format: "%1.0f", weather.current.temp)
+    public static func temperature(_ temperature: Double) -> String {
+        return String(format: "%1.0f", temperature)
     }
     
-    public static func weatherCondition(_ weather: WeatherResponse) -> String {
-        return weather.current.weather.first?.main ?? ""
+    public static func getDayFor(_ temperature: Int) -> String {
+        return dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(temperature)))
     }
     
-    public static func weatherIcon(_ weather: WeatherResponse) -> String {
-        return weather.current.weather.first?.icon ?? "moon"
+    public static func getDayNumber(_ temperature: Int) -> String {
+        return dayNumberFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(temperature)))
     }
+    
+    public static func weatherIcon(_ icon: String) -> String {
+        if icon == "" {
+            return "moon"
+        }
+        return icon
+    }
+    
+    public static let defaultDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        return formatter
+    }()
+
+    public static let dayFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE"
+        return formatter
+    }()
+    
+    public static let dayNumberFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        return formatter
+    }()
+
+    public static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh a"
+        return formatter
+    }()
 }
