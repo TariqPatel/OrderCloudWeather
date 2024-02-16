@@ -12,6 +12,7 @@ struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
     
     var body: some View {
+        NavigationView {
         VStack(spacing: 20) {
             Text("Current Weather")
             List {
@@ -38,12 +39,13 @@ struct HomeView: View {
             }
             Text("View the weather for week by clicking the below button")
                 .multilineTextAlignment(.center)
-            Button("VIEW") {
-                print("Button tapped!")
-            }.buttonStyle(.borderedProminent)
+            NavigationLink(destination: ForecastView(forecastViewModel: ForecastViewModel(weather: homeViewModel.weather))) {
+                Text("Show Detail View")
+            }
             Spacer()
         }
     }
+}
 }
 
 #Preview {

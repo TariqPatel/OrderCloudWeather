@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ForecastView: View {
+    
+    @StateObject var forecastViewModel = ForecastViewModel()
+    
     var body: some View {
-        Text("Forecast")
+        Text(String(forecastViewModel.weather.current.temp))
     }
 }
 
