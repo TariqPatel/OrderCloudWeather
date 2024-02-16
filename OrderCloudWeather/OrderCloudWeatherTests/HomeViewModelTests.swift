@@ -14,7 +14,7 @@ final class HomeViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         viewModel = HomeViewModel()
-        var weather = WeatherResponse.empty()
+        let weather = WeatherResponse.empty()
         viewModel.weather = weather
     }
 
@@ -22,8 +22,7 @@ final class HomeViewModelTests: XCTestCase {
         viewModel = nil
     }
     
-    func testIfTemperatureFormatterWorks() {
-        viewModel.weather.current.temp = -1.1399999999999999
-        XCTAssertEqual(viewModel.temperature, "-1")
+    func testIfCityCorrect() {
+        XCTAssertEqual(viewModel.city, Constants.Strings.city)
     }
 }

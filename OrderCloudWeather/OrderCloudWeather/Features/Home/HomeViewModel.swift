@@ -11,7 +11,6 @@ import CoreLocation
 
 final class HomeViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
-    @Published var weatherFormatted = WeatherFormatted()
     @Published var city = Constants.Strings.city {
         didSet {
             createWeatherURL(LocationHelper.getLocation(city))
@@ -46,25 +45,10 @@ final class HomeViewModel: ObservableObject {
                 case .success(let response):
                     DispatchQueue.main.async {
                         self.weather = response
-                        self.weatherFormatted.weatherCondition = self.weatherCondition
-                        self.weatherFormatted.temperature = self.temperature
-                        self.weatherFormatted.weatherIcon = self.weatherIcon
                     }
                 case .failure(let error):
                     print(error)
             }
         }
-    }
-    
-    var temperature: String {
-        return Formatter.formatTemp(weather.current.temp)
-    }
-    
-    var weatherCondition: String {
-        return weather.current.weather.first?.main ?? ""
-    }
-    
-    var weatherIcon: String {
-        return weather.current.weather.first?.icon ?? "moon"
     }
 }
