@@ -12,7 +12,7 @@ struct ForecastView: View {
     @StateObject var forecastViewModel = ForecastViewModel()
     
     var body: some View {
-        Text(String(forecastViewModel.weather.current.temp))
+        Text(String(forecastViewModel.weatherFormatted.weatherCondition ?? ""))
     }
 }
 

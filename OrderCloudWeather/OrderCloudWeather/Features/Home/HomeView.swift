@@ -37,10 +37,10 @@ struct HomeView: View {
                     Spacer()
                 }
             }
-            Text("View the weather for week by clicking the below button")
+            Text("View the weather for week by clicking the below text")
                 .multilineTextAlignment(.center)
-            NavigationLink(destination: ForecastView(forecastViewModel: ForecastViewModel(weather: homeViewModel.weather))) {
-                Text("Show Detail View")
+            NavigationLink(destination: ForecastView(forecastViewModel: ForecastViewModel(weather: homeViewModel.weather, weatherFormatted: homeViewModel.weatherFormatted))) {
+                Text("Show Weather For The Week")
             }
             Spacer()
         }
