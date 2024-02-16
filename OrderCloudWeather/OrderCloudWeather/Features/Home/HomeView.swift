@@ -9,10 +9,36 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var weatherViewModel = HomeViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
     
     var body: some View {
-        Text("\(weatherViewModel.temperature)°C")
+        VStack(spacing: 20) {
+            Text("Current Weather")
+            List {
+                HStack{
+                    Text("Current temperature:")
+                    Spacer()
+                    Text("\(homeViewModel.temperature)°C")
+                }
+                HStack{
+                    Text("Weather condition:")
+                    Spacer()
+                    Text(homeViewModel.weatherCondition)
+                }
+                HStack{
+                    Spacer()
+                    ImageHelper.getWeatherIconFor(icon: homeViewModel.weatherIcon)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: (CGFloat(3)*40),
+                               height: (CGFloat(3)*40),
+                               alignment: .center)
+                    Spacer()
+                }
+            }
+            
+        }
+        
     }
 }
 

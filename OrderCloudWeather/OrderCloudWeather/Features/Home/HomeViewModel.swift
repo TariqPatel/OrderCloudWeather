@@ -56,4 +56,12 @@ final class HomeViewModel: ObservableObject {
     var temperature: String {
         return Formatter.formatTemp(weather.current.temp)
     }
+    
+    var weatherCondition: String {
+        return weather.current.weather.first?.main ?? ""
+    }
+    
+    var weatherIcon: String {
+        return weather.current.weather.first?.icon ?? "moon"
+    }
 }
