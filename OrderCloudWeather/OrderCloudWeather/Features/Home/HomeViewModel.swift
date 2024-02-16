@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  TestViewModel.swift
 //  OrderCloudWeather
 //
 //  Created by Tariq Patel on 2024/02/16.
@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-final class WeatherViewModel: ObservableObject {
-    
+final class HomeViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
     
     @Published var city = Constants.Strings.city {
@@ -57,7 +56,4 @@ final class WeatherViewModel: ObservableObject {
     var temperature: String {
         return Formatter.formatTemp(weather.current.temp)
     }
-
 }
-
-
