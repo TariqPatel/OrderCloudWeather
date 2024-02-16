@@ -26,7 +26,6 @@
 		2D52420A2B7F3E9600658461 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5242092B7F3E9600658461 /* ImageHelper.swift */; };
 		2D52420D2B7F436400658461 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D52420C2B7F436400658461 /* ForecastViewModel.swift */; };
 		2D52420F2B7F437500658461 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D52420E2B7F437500658461 /* ForecastView.swift */; };
-		2D5242132B7F9BA700658461 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5242122B7F9BA700658461 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +68,6 @@
 		2D5242092B7F3E9600658461 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		2D52420C2B7F436400658461 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		2D52420E2B7F437500658461 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
-		2D5242122B7F9BA700658461 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				2D5241ED2B7F229800658461 /* Weather.swift */,
-				2D5242122B7F9BA700658461 /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,7 +351,6 @@
 			files = (
 				2D5241F72B7F251D00658461 /* LocationHelper.swift in Sources */,
 				2D5241F12B7F240000658461 /* NetworkService.swift in Sources */,
-				2D5242132B7F9BA700658461 /* Activity.swift in Sources */,
 				2D5242032B7F31F500658461 /* Formatter.swift in Sources */,
 				2D5242062B7F397900658461 /* HomeViewModel.swift in Sources */,
 				2D5241E92B7F21F300658461 /* HomeView.swift in Sources */,
