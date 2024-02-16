@@ -42,7 +42,7 @@ final class WeatherViewModel: ObservableObject {
     
     private func getWeather(city: String, for urlString: String) {
         guard let url = URL(string: urlString) else {return}
-        NetworkManager<WeatherResponse>.fetchWeather(for: url) { (result) in
+        WeatherService<WeatherResponse>.fetchWeather(for: url) { (result) in
             switch result {
                 case .success(let response):
                     DispatchQueue.main.async {
