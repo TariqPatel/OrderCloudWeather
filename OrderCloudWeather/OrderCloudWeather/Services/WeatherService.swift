@@ -8,6 +8,7 @@
 import Foundation
 
 final class WeatherService<T: Codable> {
+    
     static func fetchWeather(for url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             

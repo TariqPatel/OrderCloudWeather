@@ -8,6 +8,7 @@
 import Foundation
 
 final class ForecastViewModel: ObservableObject {
+    
     @Published var weather = WeatherResponse.empty()
     
     init(weather: WeatherResponse = WeatherResponse.empty()) {

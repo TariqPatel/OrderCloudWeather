@@ -8,6 +8,7 @@
 import Foundation
 
 enum NetworkError: Error {
+    
     case error(error: String)
     case dataInvalid
     case responseInvalid

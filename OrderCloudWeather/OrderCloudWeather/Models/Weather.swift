@@ -8,11 +8,13 @@
 import Foundation
 
 struct WeatherResponse: Codable {
+    
     var current: Weather
     var hourly: [Weather]
     var daily: [WeatherDaily]
 
     static func empty() -> WeatherResponse {
+        
         WeatherResponse(
             current: Weather(),
             hourly: [Weather](repeating: Weather(),
@@ -24,6 +26,7 @@ struct WeatherResponse: Codable {
 }
 
 struct Weather: Codable, Identifiable {
+    
     var id: UUID = UUID()
     var temp: Double
     var date: Int
@@ -65,6 +68,7 @@ struct Weather: Codable, Identifiable {
 }
 
 struct WeatherDetail: Codable, Identifiable {
+    
     var main: String
     var description: String
     var icon: String
@@ -74,6 +78,7 @@ struct WeatherDetail: Codable, Identifiable {
 }
 
 struct WeatherDaily: Codable, Identifiable {
+    
     var date: Int
     var temp: WeatherTemperature
     var weather: [WeatherDetail]
@@ -97,6 +102,7 @@ struct WeatherDaily: Codable, Identifiable {
 }
 
 struct WeatherTemperature: Codable {
+    
     var min: Double
     var max: Double
 }

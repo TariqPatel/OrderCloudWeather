@@ -10,6 +10,7 @@ import SwiftUI
 import CoreLocation
 
 final class HomeViewModel: ObservableObject {
+    
     @Published var weather = WeatherResponse.empty()
     @Published var cityLocation = Constants.Strings.city {
         didSet {
