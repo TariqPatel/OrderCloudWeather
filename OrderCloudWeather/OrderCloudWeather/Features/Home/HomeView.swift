@@ -36,6 +36,12 @@ struct HomeView: View {
                     Spacer()
                 }
             }
+            Text("View the weather for week by clicking the below button")
+                .multilineTextAlignment(.center)
+            Button("View") {
+                print("Button tapped!")
+            }.buttonStyle(.borderedProminent)
+            Spacer()
         }
     }
 }
