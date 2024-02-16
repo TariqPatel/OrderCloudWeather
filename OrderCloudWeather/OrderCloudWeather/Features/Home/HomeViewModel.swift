@@ -55,12 +55,9 @@ final class WeatherViewModel: ObservableObject {
     }
     
     var temperature: String {
-        return formatTemp(weather.current.temp)
+        return Formatter.formatTemp(weather.current.temp)
     }
-    
-    func formatTemp(_ temp: Double) -> String {
-        return String(format: "%1.0f", temp)
-    }
+
 }
 
 
